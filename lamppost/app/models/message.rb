@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  belongs_to :customer
+  belongs_to :user
   
 #TODO KAS Figure out how to have a user create a message
   validates :text, presence: true
