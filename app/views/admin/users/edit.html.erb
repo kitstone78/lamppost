@@ -1,1 +1,7 @@
-edit.html.erb
+<ol class="breadcrumb">
+<li><%= link_to "User", admin_users_path %></li>
+<li><%= link_to @user.username, admin_user_path(@user) %></li>
+<li class="active">Edit User</li>
+</ol>
+
+<%= render 'form' %>

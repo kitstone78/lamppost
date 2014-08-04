@@ -13,7 +13,7 @@ class CreateUserTest < ActionDispatch::IntegrationTest
       #assert page.has_content?('Message was successfully created.')
       assert_equal 'IntegrationTestUser', User.last.username
       click_on 'Edit'
-      fill_in 'text', :with => 'UpdatedIntegrationTestUser'
+      fill_in 'Text', :with => 'UpdatedIntegrationTestUser'
       click_on "Update User"
       #TODO
       #assert page.has_content?('Message was successfully updated.')
