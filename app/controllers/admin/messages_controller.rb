@@ -1,1 +1,6 @@
-messages_controller.rb
+class Admin::MessagesController < ApplicationController
+
+
+
+
+end
