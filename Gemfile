@@ -36,6 +36,9 @@ gem 'thin'
 gem "therubyracer"
 gem "less-rails"
 
+# Encryption
+gem 'bcrypt', '~> 3.1.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

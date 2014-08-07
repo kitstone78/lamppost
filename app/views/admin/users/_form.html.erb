@@ -1,27 +1,31 @@
-<% if @user.errors.present? %>
-  <p>
-    <h2>There was an error</h2>
-    <% for error in @user.errors.full_messages %>
-    <%= error %>
-    <% end %>
-  </p>
-<% end %>
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :password, :class => 'text_field' %>
+    </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :password, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'text_field' %>
+    </div>
+  </div>
 
-<%= form_for [:admin, @user] do |f| %>
-  <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </p>
-
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </p>
-
-  <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
+  </div>
 <% end %>

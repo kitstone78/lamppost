@@ -1,10 +1,11 @@
 class Admin::MessagesController < ApplicationController
+  before_action :require_login
   def index
     @messages = Message.all
   end
 
   def create
-    @message = message.new(params.require(:message).permit!)
+    @message = message.new(message_params)
   if @message.save
     redirect_to admin_message_path(@message), notice: "message #{@message.id} was created"
   else
@@ -26,7 +27,7 @@ class Admin::MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
-  if @message.update(params.require(:message).permit!)
+  if @message.update(message_params)
     redirect_to admin_messages_path(@message), notice: "message #{@message.messagename} was updated successfully"
   else
     render 'edit'
@@ -39,4 +40,18 @@ class Admin::MessagesController < ApplicationController
     redirect_to admin_messages_path, notice: "message #{@message.id} was deleted}"
   end
 
+  def require_login
+    unless logged_in?
+      redirect_to admin_login_path, danger: 'Please log in to continue'
+    end
+  end
+
+  def logged_in?
+    session[:user_id].present?
+  end
+
+  private
+  def message_params
+    params.require(:message).permit(:text, :user_id)
+  end
 end

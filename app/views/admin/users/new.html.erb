@@ -2,5 +2,9 @@
 <li><%= link_to "Users", admin_users_path %></li>
 <li class="active">New User</li>
 </ol>
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
 
 <%= render 'form' %>
