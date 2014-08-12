@@ -32,10 +32,4 @@ ActiveRecord::Schema.define(version: 20140803130609) do
     t.string   "password_digest"
   end
 
-  create_table "welcomes", force: true do |t|
-    t.string   "index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
