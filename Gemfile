@@ -39,6 +39,9 @@ gem "less-rails"
 # Encryption
 gem 'bcrypt', '~> 3.1.5'
 
+# CanCanCan for 
+gem 'cancancan', '~> 1.9'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
