@@ -33,10 +33,4 @@ ActiveRecord::Schema.define(version: 20140816191727) do
     t.string   "role"
   end
 
-  create_table "welcomes", force: true do |t|
-    t.string   "index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
