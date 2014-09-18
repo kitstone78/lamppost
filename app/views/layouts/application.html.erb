@@ -19,11 +19,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Some Store</a>
+      <%= link_to "Lamppost", root_path, class: "brand" %>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Messages" %></li>
-          <li><%= link_to "Users" %></li>
+          <li><%= link_to "Messages", messages_path %></li>
+          <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Admin Log In", admin_login_path, method: "new" %></li>
           <li><%= link_to "Admin Sign out", admin_login_path, method: "delete" %></li>
         </ul>
