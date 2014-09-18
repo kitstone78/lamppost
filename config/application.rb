@@ -2,6 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+# Works with pry.  This might not be in the right place
+require 'pry-nav'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
