@@ -22,6 +22,7 @@
       <%= f.text_field :username, :class => 'text_field' %>
     </div>
   </div>
+  <%= f.hidden_field :role, :value => 'user' %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

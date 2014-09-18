@@ -7,7 +7,7 @@ class Admin::LoginsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.try(:authenticate, params[:password])
       session[:user_id] = user.id
-      redirect_to admin_messages_path
+      redirect_to messages_path
     else
       flash.now[:danger] = 'Log In Failed'
       render 'new'

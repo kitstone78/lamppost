@@ -10,6 +10,7 @@
     <div class="controls">
       <%= f.text_field :password, :class => 'text_field' %>
     </div>
+  </div>  
   <div class="control-group">
     <%= f.label :password, :class => 'control-label' %>
     <div class="controls">
@@ -22,6 +23,17 @@
       <%= f.text_field :username, :class => 'text_field' %>
     </div>
   </div>
+    <div class="control-group">
+      
+      <div class="controls">
+        <%= f.radio_button :role, 'User' %>
+        <%= f.label :role, 'user', :checked => true, :class => 'control-label' %>
+      </div>
+      <div class="controls">
+        <%= f.radio_button :role, 'admin' %>
+        <%= f.label :role, 'Administrator', :checked => true, :class => 'control-label' %> 
+      </div>
+    </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

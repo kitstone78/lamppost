@@ -1,4 +1,7 @@
 class Admin::UsersController < ApplicationController
+  
+  load_and_authorize_resource
+
   before_action :require_login
 
   def index
@@ -50,6 +53,12 @@ class Admin::UsersController < ApplicationController
   def logged_in?
     session[:user_id].present?
   end
+
+  def admin?
+    @user = User.find(params[:id])
+    @user.role == 'Admin'
+  end
+
 
   private
   def message_params

@@ -1,5 +1,10 @@
 class Admin::MessagesController < ApplicationController
+  
+  load_and_authorize_resource
+
   before_action :require_login
+  before_action :authorize?
+  
   def index
     @messages = Message.all
   end
@@ -50,7 +55,8 @@ class Admin::MessagesController < ApplicationController
     session[:user_id].present?
   end
 
-  private
+ private
+
   def message_params
     params.require(:message).permit(:text, :user_id)
   end
